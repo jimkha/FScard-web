@@ -1,0 +1,769 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+* ::-webkit-scrollbar {
+  width: 1.5px;
+}
+
+* ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+  height: 100px;
+}
+
+* ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  -ms-grid-rows: 13% 1fr;
+  -ms-grid-columns: 280px 1fr;
+      grid-template: 13% 1fr / 280px 1fr;
+}
+
+.App .navbar {
+  grid-column: span 2;
+  border-bottom: 0.5px solid #b4b4b4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .navbar #logo {
+  width: 80px;
+  margin: 0 120px 0 40px;
+}
+
+.App .navbar .wrapper.--width {
+  width: 50%;
+  max-width: 1000px;
+  min-width: 300px;
+}
+
+.App .navbar .search-box {
+  border: 0.5px solid #b4b4b4;
+  width: 100%;
+  height: 55px;
+  padding: 3px 20px;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .navbar .search-box input {
+  height: 30px;
+  border: none;
+  padding: 1px 0 0 0;
+  font-size: 19px;
+  outline: none;
+  width: 100%;
+}
+
+.App .navbar .search-box a {
+  position: relative;
+  top: 3px;
+}
+
+.App .navbar .search-box #icon_search {
+  color: #6200ee;
+  font-size: 35px;
+}
+
+.App .navbar .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  height: 40px;
+  width: 100px;
+  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.App .navbar .wrapper #icon_extend {
+  width: 20px;
+  cursor: pointer;
+}
+
+.App .navbar .wrapper #avatar {
+  width: 50px;
+  margin: 0 80px 0 20px;
+}
+
+.App .sidebar {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #b4b4b4;
+  padding: 0px 10px 0px 0px;
+}
+
+.App .sidebar__btn-create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 0;
+  margin: 30px 0px;
+  border-radius: 0 30px 30px 0px;
+  width: 130px;
+  background-color: #018786;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.App .sidebar__btn-create .icon-plus {
+  width: 27px;
+  margin: 0 20px;
+}
+
+.App .sidebar__btn-create span {
+  color: white;
+}
+
+.App .sidebar__btn-create:hover {
+  -webkit-box-shadow: 0 0 8px;
+          box-shadow: 0 0 8px;
+}
+
+.App .sidebar__btn-create:hover span {
+  color: #e4e7e7;
+}
+
+.App .sidebar__options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .sidebar__options .btn.active {
+  background: rgba(3, 218, 198, 0.5);
+  border-radius: 0 30px 30px 0;
+  color: #018786;
+  font-weight: 400;
+  width: 100%;
+}
+
+.App .sidebar__options .btn.active .icon {
+  width: 24px;
+}
+
+.App .sidebar__options .btn {
+  padding: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 19px;
+  font-weight: 300;
+  cursor: pointer;
+  width: 70%;
+  border-radius: 0 30px 30px 0;
+}
+
+.App .sidebar__options .btn:hover {
+  background: rgba(3, 218, 198, 0.1);
+}
+
+.App .sidebar__options .btn .icon {
+  width: 22px;
+  margin-right: 10px;
+}
+
+.App .sidebar__options .btn-storage {
+  border-top: 1.5px solid #b4b4b4;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .sidebar__options .btn-storage .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 19px;
+  padding: 13px;
+  font-weight: 300;
+}
+
+.App .sidebar__options .btn-storage .wrapper .icon_storage {
+  width: 22px;
+  margin-right: 10px;
+}
+
+.App .sidebar__options .btn-storage .status-bar {
+  width: 180px;
+  background-color: #b4b4b4;
+  margin-left: 40px;
+  margin-bottom: 8px;
+}
+
+.App .sidebar__options .btn-storage .status-bar .percent {
+  background-color: #018786;
+  width: 20%;
+  height: 3px;
+}
+
+.App .sidebar__options .btn-storage .number-percent-storage {
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 40px;
+}
+
+.App .container-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+.App .container-cards .toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.App .container-cards .toolbar .btn.mode-card {
+  width: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.App .container-cards .toolbar .time-show-options {
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.App .container-cards .wrapper-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70%;
+}
+
+.App .container-cards .wrapper-cards .card {
+  padding: 50px 0 10px 0;
+  -webkit-box-shadow: 0 0 20px #c4c4c4;
+          box-shadow: 0 0 20px #c4c4c4;
+  width: 600px;
+  height: 380px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.App .container-cards .wrapper-cards .card .icon_delete,
+.App .container-cards .wrapper-cards .card .icon_edit,
+.App .container-cards .wrapper-cards .card .icon_volumn {
+  position: absolute;
+  padding: 10px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.App .container-cards .wrapper-cards .card .icon_delete:hover,
+.App .container-cards .wrapper-cards .card .icon_edit:hover,
+.App .container-cards .wrapper-cards .card .icon_volumn:hover {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  opacity: 1;
+}
+
+.App .container-cards .wrapper-cards .card .icon_delete {
+  right: 0px;
+  top: 0;
+  font-size: 25px;
+}
+
+.App .container-cards .wrapper-cards .card .icon_delete:hover {
+  font-size: 28px;
+}
+
+.App .container-cards .wrapper-cards .card .icon_edit {
+  left: 6px;
+  top: 5px;
+  width: 40px;
+}
+
+.App .container-cards .wrapper-cards .card .icon_edit:hover {
+  width: 44px;
+}
+
+.App .container-cards .wrapper-cards .card .icon_volumn {
+  right: 8px;
+  bottom: 1px;
+  font-size: 30px;
+}
+
+.App .container-cards .wrapper-cards .card .icon_volumn:hover {
+  font-size: 33px;
+}
+
+.App .container-cards .wrapper-cards .card .content {
+  overflow: overlay;
+  height: 100%;
+  width: 100%;
+}
+
+.App .container-cards .wrapper-cards .card .content .word {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: lighter;
+  font-size: 20px;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .title {
+  font-size: 100px;
+  font-weight: lighter;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .hastag {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  font-weight: lighter;
+  font-size: 15px;
+  border-radius: 30px;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .hastag:hover {
+  opacity: 0.8;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .example span {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .idiom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .idiom__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 10px;
+  font-weight: lighter;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .idiom__title .icon_idiom {
+  width: 30px;
+  margin-right: 4px;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .idiom__title p {
+  text-align: center;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .idiom > :not(.idiom__title) {
+  margin: 3px 0;
+  font-size: 13px;
+  padding-left: 20px;
+  letter-spacing: 0.6px;
+}
+
+.App .container-cards .wrapper-cards .card .content .word .idiom > :not(.idiom__title) span {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.App .container-cards .wrapper-cards .card.add-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content .word {
+  padding: 0 10px;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content .word > * {
+  margin-bottom: 10px;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content .word .title {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content .word .hastag {
+  padding: 7px 15px;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content .media {
+  width: 48%;
+}
+
+.App .container-cards .wrapper-cards .card.add-media .content .media > * {
+  margin-bottom: 10px;
+  height: 150px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.App .container-cards .wrapper-cards .card.facade {
+  background: #6200ee;
+}
+
+.App .container-cards .wrapper-cards .card.facade .hastag {
+  background-color: #3700b3;
+}
+
+.App .container-cards .wrapper-cards .card.backside {
+  background: #03dac6;
+}
+
+.App .container-cards .wrapper-cards .card.backside .hastag {
+  background-color: #018786;
+}
+
+.App .container-cards .wrapper-cards .card-edit .icon_accept,
+.App .container-cards .wrapper-cards .card-edit .icon_cancel {
+  position: absolute;
+  padding: 10px;
+  opacity: 0.8;
+  width: 40px;
+  cursor: pointer;
+}
+
+.App .container-cards .wrapper-cards .card-edit .icon_accept:hover,
+.App .container-cards .wrapper-cards .card-edit .icon_cancel:hover {
+  width: 44px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  opacity: 1;
+}
+
+.App .container-cards .wrapper-cards .card-edit .icon_accept {
+  left: 6px;
+  top: 5px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .icon_cancel {
+  left: 40px;
+  top: 5px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .icon_volumn {
+  opacity: 1;
+  padding: 10px;
+  background: rgba(1, 135, 134, 0.5);
+  border-radius: 40px;
+  margin-bottom: 5px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .icon_volumn:hover {
+  background: rgba(1, 135, 134, 0.2);
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word {
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word > * {
+  margin-bottom: 10px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .icon_title,
+.App .container-cards .wrapper-cards .card-edit .content .word .icon_example,
+.App .container-cards .wrapper-cards .card-edit .content .word .icon_idiom {
+  font-size: 20px;
+  position: absolute;
+  background: #018786;
+  border-radius: 10px 0;
+  padding: 5px;
+  top: 0;
+  left: 0;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .input-title,
+.App .container-cards .wrapper-cards .card-edit .content .word .input-example,
+.App .container-cards .wrapper-cards .card-edit .content .word .input-idiom {
+  outline: none;
+  background: inherit;
+  font-size: 20px;
+  border: 1.5px solid #018786;
+  border-radius: 10px 10px 0;
+  padding: 10px 10px 10px 35px;
+  color: white;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag {
+  position: relative;
+  cursor: pointer;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag .hastag__icon_cancel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag p {
+  opacity: 0.6;
+  font-size: 15px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag:hover {
+  opacity: 1;
+  background: rgba(1, 135, 134, 0.9);
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag:hover .hastag__icon_cancel {
+  font-size: 26px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .icon_plus {
+  color: white;
+  background: rgba(1, 135, 134, 0.5);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .example {
+  position: relative;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .example .icon_example {
+  font-size: 18px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .idiom-edit {
+  all: initial;
+  position: relative;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .idiom-edit span {
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  word-spacing: 1px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .word .idiom-edit .icon_idiom {
+  width: 35px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media > * {
+  all: initial;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video {
+  position: relative;
+  background: rgba(3, 218, 198, 0.5);
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .img,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .video,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .img,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .video {
+  opacity: 0.6;
+  margin-bottom: 10px;
+  height: 150px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_edit,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_edit {
+  opacity: 1;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_edit:hover,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_edit:hover {
+  width: 65px;
+}
+
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_cancel,
+.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_cancel {
+  opacity: 1;
+  z-index: 1;
+  right: 10px;
+  top: 0;
+  left: initial;
+  color: white;
+}
+
+.App .pagination-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: black;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .pagination-card .icon {
+  margin: 0 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.App .pagination-card .--color-init {
+  color: #b4b4b4;
+}
+/*# sourceMappingURL=App.css.map */
