@@ -1,20 +1,50 @@
+const jwt = require('jsonwebtoken');
+
 //Model
 const User = require('../models/User');
 
 const controller = {};
 
+//LOADUSER
 controller.loadUser = async (req, res) => {
   try {
-    const idGG = req.user.id;
+    const user = await User.findById(req.user.id);
+    res.json(user);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+//LOGIN
+controller.login = async (req, res) => {
+  try {
+    const idGG = req.user.idGG;
     const email = req.user.email;
-    const user = await User.find({ idGG: idGG });
-    if (user.length !== 0) {
-      res.json(user);
-      return;
+    const name = req.user.name;
+
+    //Check if user exists
+    let user = await User.find({ idGG: idGG });
+    if (user.length === 0) {
+      user = new User({ idGG, email, name });
+      await user.save();
     }
-    const newUser = new User({ idGG, email });
-    await newUser.save();
-    res.json(newUser);
+
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+
+    jwt.sign(
+      payload,
+      process.env.jwtSecret,
+      { expiresIn: 360000 },
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      },
+    );
   } catch (err) {
     console.log(err.message);
     res.status(500).send('Server Error');

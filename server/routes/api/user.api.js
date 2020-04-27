@@ -11,6 +11,11 @@ const authGoogle = require('../middleware/authGoogle.middle');
 // @route   GET api/user/auth
 // @desc    load user
 // @access  Public
-router.get('/auth', authGoogle, controller.loadUser);
+router.get('/auth', auth, controller.loadUser);
+
+// @route   POST api/user/login
+// @desc    login, get token
+// @access  Public
+router.get('/login/:token', authGoogle, controller.login);
 
 module.exports = router;

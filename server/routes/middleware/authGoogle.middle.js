@@ -3,8 +3,7 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const client = new OAuth2Client(CLIENT_ID);
 
 module.exports = async (req, res, next) => {
-  const token = req.header('x-auth-token');
-
+  const token = req.params.token;
   // Check if not token
   if (!token || token === 'undefined') {
     return res.status(401).json({ msg: 'Token is not valid' });
@@ -17,9 +16,11 @@ module.exports = async (req, res, next) => {
       //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
     });
     const payload = ticket.getPayload();
+    console.log(payload);
     req.user = {};
-    req.user.id = payload['sub'];
+    req.user.idGG = payload['sub'];
     req.user.email = payload['email'];
+    req.user.name = payload['name'];
     next();
   } catch (err) {
     console.log(err);

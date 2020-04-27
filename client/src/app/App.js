@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //CSS
-import "./App.scss";
+import "./App.css";
 //REDUX
 import { loadUser } from "./stores/actions/auth";
 import store from "./stores";
@@ -19,11 +19,11 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <section className="container">
           <Alert />
           <Switch>
-            <PrivateRoute path="/table" component={Calendar} />
+            {/* <PrivateRoute path="/dashboard" component={} /> */}
             <Route path="/login" component={Login} />
           </Switch>
         </section>

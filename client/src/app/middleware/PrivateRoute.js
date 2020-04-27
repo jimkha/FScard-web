@@ -18,6 +18,7 @@ const PrivateRoute = ({
           <Redirect to="/login" />
         )
       ) : (
+        //TODO
         <Spinner />
       )
     }

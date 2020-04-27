@@ -1,8 +1,11 @@
-import React from "./node_modules/react";
-import PropTypes from "./node_modules/prop-types";
-import { Link, Redirect } from "./node_modules/react-router-dom";
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { Link, Redirect } from "react-router-dom";
+import GoogleLogin from "react-google-login";
 
-import GoogleLogin from "./node_modules/react-google-login";
+//REDUX
+import { login } from "../../stores/actions/auth";
 
 const Login = ({ login, isAuthenticated }) => {
   return isAuthenticated ? (
@@ -13,9 +16,19 @@ const Login = ({ login, isAuthenticated }) => {
       buttonText="Login"
       // scope="email https://www.googleapis.com/auth/drive"
       onSuccess={login}
-      isSignedIn={true}
-      onFailure={responseGoogle}
+      // isSignedIn={true}
+      onFailure={login}
       cookiePolicy={"single_host_origin"}
     />
   );
 };
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps, { login })(Login);
