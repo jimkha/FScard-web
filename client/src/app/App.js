@@ -9,7 +9,7 @@ import { loadUser } from "./stores/actions/auth";
 import store from "./stores";
 //COMPONENTS
 import PrivateRoute from "./middleware/PrivateRoute";
-import Alert from "./components/alert/Alert";
+import Alert from "./components/common/Alert";
 import Login from "./components/auth/Login";
 
 const App = () => {

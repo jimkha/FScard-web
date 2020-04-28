@@ -24,18 +24,17 @@ controller.login = async (req, res) => {
     const name = req.user.name;
 
     //Check if user exists
-    let user = await User.find({ idGG: idGG });
-    if (user.length === 0) {
+    let user = await User.findOne({ idGG: idGG });
+
+    if (!user) {
       user = new User({ idGG, email, name });
       await user.save();
     }
-
     const payload = {
       user: {
-        id: user.id,
+        id: user._id,
       },
     };
-
     jwt.sign(
       payload,
       process.env.jwtSecret,

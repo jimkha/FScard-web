@@ -16,7 +16,6 @@ module.exports = async (req, res, next) => {
       //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3]
     });
     const payload = ticket.getPayload();
-    console.log(payload);
     req.user = {};
     req.user.idGG = payload['sub'];
     req.user.email = payload['email'];

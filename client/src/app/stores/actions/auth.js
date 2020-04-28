@@ -7,6 +7,7 @@ import {
   LOGIN_FAIL,
 } from "../actions/types";
 
+import { setAlert } from "./alert";
 //UTILS
 import setAuthToken from "../../utils/setAuthToken";
 
@@ -31,13 +32,19 @@ export const loadUser = () => async (dispatch) => {
 };
 
 //LOGIN
-export const login = ({ tokenId }) => async (dispatch) => {
+export const login = (data) => async (dispatch) => {
+  if (data.error) {
+    console.log(data.error);
+    return;
+  }
   try {
+    const tokenId = data.tokenId;
     const res = await axios.get("/api/user/login/" + tokenId);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
+    dispatch(loadUser());
   } catch (error) {
     const errors = error.response.data.errors;
 
