@@ -20,6 +20,7 @@ module.exports = async (req, res, next) => {
     req.user.idGG = payload['sub'];
     req.user.email = payload['email'];
     req.user.name = payload['name'];
+    req.user.picture = payload['picture'];
     next();
   } catch (err) {
     console.log(err);

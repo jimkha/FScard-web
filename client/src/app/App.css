@@ -40,7 +40,7 @@ body {
   overflow: hidden;
 }
 
-.App {
+.container {
   display: -ms-grid;
   display: grid;
   height: 100%;
@@ -49,7 +49,7 @@ body {
       grid-template: 13% 1fr / 280px 1fr;
 }
 
-.App .navbar {
+.container .navbar {
   grid-column: span 2;
   border-bottom: 0.5px solid #b4b4b4;
   display: -webkit-box;
@@ -63,18 +63,18 @@ body {
           align-items: center;
 }
 
-.App .navbar #logo {
+.container .navbar #logo {
   width: 80px;
   margin: 0 120px 0 40px;
 }
 
-.App .navbar .wrapper.--width {
+.container .navbar .wrapper.--width {
   width: 50%;
   max-width: 1000px;
   min-width: 300px;
 }
 
-.App .navbar .search-box {
+.container .navbar .search-box {
   border: 0.5px solid #b4b4b4;
   width: 100%;
   height: 55px;
@@ -91,7 +91,7 @@ body {
           align-items: center;
 }
 
-.App .navbar .search-box input {
+.container .navbar .search-box input {
   height: 30px;
   border: none;
   padding: 1px 0 0 0;
@@ -100,17 +100,17 @@ body {
   width: 100%;
 }
 
-.App .navbar .search-box a {
+.container .navbar .search-box a {
   position: relative;
   top: 3px;
 }
 
-.App .navbar .search-box #icon_search {
+.container .navbar .search-box #icon_search {
   color: #6200ee;
   font-size: 35px;
 }
 
-.App .navbar .wrapper {
+.container .navbar .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,17 +126,18 @@ body {
       justify-content: space-around;
 }
 
-.App .navbar .wrapper #icon_extend {
+.container .navbar .wrapper #icon_extend {
   width: 20px;
   cursor: pointer;
 }
 
-.App .navbar .wrapper #avatar {
+.container .navbar .wrapper #avatar {
   width: 50px;
   margin: 0 80px 0 20px;
+  border-radius: 30px;
 }
 
-.App .sidebar {
+.container .sidebar {
   height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,7 +150,7 @@ body {
   padding: 0px 10px 0px 0px;
 }
 
-.App .sidebar__btn-create {
+.container .sidebar__btn-create {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,25 +167,25 @@ body {
   cursor: pointer;
 }
 
-.App .sidebar__btn-create .icon-plus {
+.container .sidebar__btn-create .icon-plus {
   width: 27px;
   margin: 0 20px;
 }
 
-.App .sidebar__btn-create span {
+.container .sidebar__btn-create span {
   color: white;
 }
 
-.App .sidebar__btn-create:hover {
+.container .sidebar__btn-create:hover {
   -webkit-box-shadow: 0 0 8px;
           box-shadow: 0 0 8px;
 }
 
-.App .sidebar__btn-create:hover span {
+.container .sidebar__btn-create:hover span {
   color: #e4e7e7;
 }
 
-.App .sidebar__options {
+.container .sidebar__options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,7 +195,7 @@ body {
           flex-direction: column;
 }
 
-.App .sidebar__options .btn.active {
+.container .sidebar__options .btn.active {
   background: rgba(3, 218, 198, 0.5);
   border-radius: 0 30px 30px 0;
   color: #018786;
@@ -202,11 +203,11 @@ body {
   width: 100%;
 }
 
-.App .sidebar__options .btn.active .icon {
+.container .sidebar__options .btn.active .icon {
   width: 24px;
 }
 
-.App .sidebar__options .btn {
+.container .sidebar__options .btn {
   padding: 13px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -221,16 +222,16 @@ body {
   border-radius: 0 30px 30px 0;
 }
 
-.App .sidebar__options .btn:hover {
+.container .sidebar__options .btn:hover {
   background: rgba(3, 218, 198, 0.1);
 }
 
-.App .sidebar__options .btn .icon {
+.container .sidebar__options .btn .icon {
   width: 22px;
   margin-right: 10px;
 }
 
-.App .sidebar__options .btn-storage {
+.container .sidebar__options .btn-storage {
   border-top: 1.5px solid #b4b4b4;
   margin-top: 15px;
   display: -webkit-box;
@@ -242,7 +243,7 @@ body {
           flex-direction: column;
 }
 
-.App .sidebar__options .btn-storage .wrapper {
+.container .sidebar__options .btn-storage .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,31 +252,31 @@ body {
   font-weight: 300;
 }
 
-.App .sidebar__options .btn-storage .wrapper .icon_storage {
+.container .sidebar__options .btn-storage .wrapper .icon_storage {
   width: 22px;
   margin-right: 10px;
 }
 
-.App .sidebar__options .btn-storage .status-bar {
+.container .sidebar__options .btn-storage .status-bar {
   width: 180px;
   background-color: #b4b4b4;
   margin-left: 40px;
   margin-bottom: 8px;
 }
 
-.App .sidebar__options .btn-storage .status-bar .percent {
+.container .sidebar__options .btn-storage .status-bar .percent {
   background-color: #018786;
   width: 20%;
   height: 3px;
 }
 
-.App .sidebar__options .btn-storage .number-percent-storage {
+.container .sidebar__options .btn-storage .number-percent-storage {
   font-size: 15px;
   font-weight: 300;
   margin-left: 40px;
 }
 
-.App .container-cards {
+.container .container-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -286,7 +287,7 @@ body {
   width: 90%;
 }
 
-.App .container-cards .toolbar {
+.container .container-cards .toolbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,19 +297,19 @@ body {
   padding: 20px 50px;
 }
 
-.App .container-cards .toolbar .btn.mode-card {
+.container .container-cards .toolbar .btn.mode-card {
   width: 18px;
   margin-right: 10px;
   cursor: pointer;
 }
 
-.App .container-cards .toolbar .time-show-options {
+.container .container-cards .toolbar .time-show-options {
   border: none;
   outline: none;
   font-size: 15px;
 }
 
-.App .container-cards .wrapper-cards {
+.container .container-cards .wrapper-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,7 +322,7 @@ body {
   height: 70%;
 }
 
-.App .container-cards .wrapper-cards .card {
+.container .container-cards .wrapper-cards .card {
   padding: 50px 0 10px 0;
   -webkit-box-shadow: 0 0 20px #c4c4c4;
           box-shadow: 0 0 20px #c4c4c4;
@@ -331,60 +332,60 @@ body {
   position: relative;
 }
 
-.App .container-cards .wrapper-cards .card .icon_delete,
-.App .container-cards .wrapper-cards .card .icon_edit,
-.App .container-cards .wrapper-cards .card .icon_volumn {
+.container .container-cards .wrapper-cards .card .icon_delete,
+.container .container-cards .wrapper-cards .card .icon_edit,
+.container .container-cards .wrapper-cards .card .icon_volumn {
   position: absolute;
   padding: 10px;
   opacity: 0.8;
   cursor: pointer;
 }
 
-.App .container-cards .wrapper-cards .card .icon_delete:hover,
-.App .container-cards .wrapper-cards .card .icon_edit:hover,
-.App .container-cards .wrapper-cards .card .icon_volumn:hover {
+.container .container-cards .wrapper-cards .card .icon_delete:hover,
+.container .container-cards .wrapper-cards .card .icon_edit:hover,
+.container .container-cards .wrapper-cards .card .icon_volumn:hover {
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
   opacity: 1;
 }
 
-.App .container-cards .wrapper-cards .card .icon_delete {
+.container .container-cards .wrapper-cards .card .icon_delete {
   right: 0px;
   top: 0;
   font-size: 25px;
 }
 
-.App .container-cards .wrapper-cards .card .icon_delete:hover {
+.container .container-cards .wrapper-cards .card .icon_delete:hover {
   font-size: 28px;
 }
 
-.App .container-cards .wrapper-cards .card .icon_edit {
+.container .container-cards .wrapper-cards .card .icon_edit {
   left: 6px;
   top: 5px;
   width: 40px;
 }
 
-.App .container-cards .wrapper-cards .card .icon_edit:hover {
+.container .container-cards .wrapper-cards .card .icon_edit:hover {
   width: 44px;
 }
 
-.App .container-cards .wrapper-cards .card .icon_volumn {
+.container .container-cards .wrapper-cards .card .icon_volumn {
   right: 8px;
   bottom: 1px;
   font-size: 30px;
 }
 
-.App .container-cards .wrapper-cards .card .icon_volumn:hover {
+.container .container-cards .wrapper-cards .card .icon_volumn:hover {
   font-size: 33px;
 }
 
-.App .container-cards .wrapper-cards .card .content {
+.container .container-cards .wrapper-cards .card .content {
   overflow: overlay;
   height: 100%;
   width: 100%;
 }
 
-.App .container-cards .wrapper-cards .card .content .word {
+.container .container-cards .wrapper-cards .card .content .word {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,12 +405,12 @@ body {
           justify-content: center;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .title {
+.container .container-cards .wrapper-cards .card .content .word .title {
   font-size: 100px;
   font-weight: lighter;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .hastag {
+.container .container-cards .wrapper-cards .card .content .word .hastag {
   text-decoration: none;
   color: white;
   padding: 10px;
@@ -419,16 +420,16 @@ body {
   border-radius: 30px;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .hastag:hover {
+.container .container-cards .wrapper-cards .card .content .word .hastag:hover {
   opacity: 0.8;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .example span {
+.container .container-cards .wrapper-cards .card .content .word .example span {
   font-weight: 500;
   font-size: 24px;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .idiom {
+.container .container-cards .wrapper-cards .card .content .word .idiom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -442,7 +443,7 @@ body {
   width: 300px;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .idiom__title {
+.container .container-cards .wrapper-cards .card .content .word .idiom__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -453,61 +454,61 @@ body {
   font-weight: lighter;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .idiom__title .icon_idiom {
+.container .container-cards .wrapper-cards .card .content .word .idiom__title .icon_idiom {
   width: 30px;
   margin-right: 4px;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .idiom__title p {
+.container .container-cards .wrapper-cards .card .content .word .idiom__title p {
   text-align: center;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .idiom > :not(.idiom__title) {
+.container .container-cards .wrapper-cards .card .content .word .idiom > :not(.idiom__title) {
   margin: 3px 0;
   font-size: 13px;
   padding-left: 20px;
   letter-spacing: 0.6px;
 }
 
-.App .container-cards .wrapper-cards .card .content .word .idiom > :not(.idiom__title) span {
+.container .container-cards .wrapper-cards .card .content .word .idiom > :not(.idiom__title) span {
   font-weight: 500;
   font-size: 14px;
 }
 
-.App .container-cards .wrapper-cards .card.add-media {
+.container .container-cards .wrapper-cards .card.add-media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content {
+.container .container-cards .wrapper-cards .card.add-media .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content .word {
+.container .container-cards .wrapper-cards .card.add-media .content .word {
   padding: 0 10px;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content .word > * {
+.container .container-cards .wrapper-cards .card.add-media .content .word > * {
   margin-bottom: 10px;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content .word .title {
+.container .container-cards .wrapper-cards .card.add-media .content .word .title {
   font-size: 50px;
   font-weight: 400;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content .word .hastag {
+.container .container-cards .wrapper-cards .card.add-media .content .word .hastag {
   padding: 7px 15px;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content .media {
+.container .container-cards .wrapper-cards .card.add-media .content .media {
   width: 48%;
 }
 
-.App .container-cards .wrapper-cards .card.add-media .content .media > * {
+.container .container-cards .wrapper-cards .card.add-media .content .media > * {
   margin-bottom: 10px;
   height: 150px;
   width: 100%;
@@ -515,24 +516,24 @@ body {
      object-fit: cover;
 }
 
-.App .container-cards .wrapper-cards .card.facade {
+.container .container-cards .wrapper-cards .card.facade {
   background: #6200ee;
 }
 
-.App .container-cards .wrapper-cards .card.facade .hastag {
+.container .container-cards .wrapper-cards .card.facade .hastag {
   background-color: #3700b3;
 }
 
-.App .container-cards .wrapper-cards .card.backside {
+.container .container-cards .wrapper-cards .card.backside {
   background: #03dac6;
 }
 
-.App .container-cards .wrapper-cards .card.backside .hastag {
+.container .container-cards .wrapper-cards .card.backside .hastag {
   background-color: #018786;
 }
 
-.App .container-cards .wrapper-cards .card-edit .icon_accept,
-.App .container-cards .wrapper-cards .card-edit .icon_cancel {
+.container .container-cards .wrapper-cards .card-edit .icon_accept,
+.container .container-cards .wrapper-cards .card-edit .icon_cancel {
   position: absolute;
   padding: 10px;
   opacity: 0.8;
@@ -540,25 +541,25 @@ body {
   cursor: pointer;
 }
 
-.App .container-cards .wrapper-cards .card-edit .icon_accept:hover,
-.App .container-cards .wrapper-cards .card-edit .icon_cancel:hover {
+.container .container-cards .wrapper-cards .card-edit .icon_accept:hover,
+.container .container-cards .wrapper-cards .card-edit .icon_cancel:hover {
   width: 44px;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
   opacity: 1;
 }
 
-.App .container-cards .wrapper-cards .card-edit .icon_accept {
+.container .container-cards .wrapper-cards .card-edit .icon_accept {
   left: 6px;
   top: 5px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .icon_cancel {
+.container .container-cards .wrapper-cards .card-edit .icon_cancel {
   left: 40px;
   top: 5px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .icon_volumn {
+.container .container-cards .wrapper-cards .card-edit .icon_volumn {
   opacity: 1;
   padding: 10px;
   background: rgba(1, 135, 134, 0.5);
@@ -566,23 +567,23 @@ body {
   margin-bottom: 5px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .icon_volumn:hover {
+.container .container-cards .wrapper-cards .card-edit .icon_volumn:hover {
   background: rgba(1, 135, 134, 0.2);
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word {
+.container .container-cards .wrapper-cards .card-edit .content .word {
   -webkit-box-pack: initial;
       -ms-flex-pack: initial;
           justify-content: initial;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word > * {
+.container .container-cards .wrapper-cards .card-edit .content .word > * {
   margin-bottom: 10px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .icon_title,
-.App .container-cards .wrapper-cards .card-edit .content .word .icon_example,
-.App .container-cards .wrapper-cards .card-edit .content .word .icon_idiom {
+.container .container-cards .wrapper-cards .card-edit .content .word .icon_title,
+.container .container-cards .wrapper-cards .card-edit .content .word .icon_example,
+.container .container-cards .wrapper-cards .card-edit .content .word .icon_idiom {
   font-size: 20px;
   position: absolute;
   background: #018786;
@@ -592,9 +593,9 @@ body {
   left: 0;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .input-title,
-.App .container-cards .wrapper-cards .card-edit .content .word .input-example,
-.App .container-cards .wrapper-cards .card-edit .content .word .input-idiom {
+.container .container-cards .wrapper-cards .card-edit .content .word .input-title,
+.container .container-cards .wrapper-cards .card-edit .content .word .input-example,
+.container .container-cards .wrapper-cards .card-edit .content .word .input-idiom {
   outline: none;
   background: inherit;
   font-size: 20px;
@@ -606,14 +607,14 @@ body {
   max-width: 300px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .title {
+.container .container-cards .wrapper-cards .card-edit .content .word .title {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -622,12 +623,12 @@ body {
           align-items: center;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag {
   position: relative;
   cursor: pointer;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag .hastag__icon_cancel {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag .hastag__icon_cancel {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -635,21 +636,21 @@ body {
           transform: translate(-50%, -50%);
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag p {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag p {
   opacity: 0.6;
   font-size: 15px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag:hover {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag:hover {
   opacity: 1;
   background: rgba(1, 135, 134, 0.9);
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag:hover .hastag__icon_cancel {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .hastag:hover .hastag__icon_cancel {
   font-size: 26px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .icon_plus {
+.container .container-cards .wrapper-cards .card-edit .content .word .wrapper-hastag .icon_plus {
   color: white;
   background: rgba(1, 135, 134, 0.5);
   font-size: 15px;
@@ -659,30 +660,30 @@ body {
   border-radius: 30px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .example {
+.container .container-cards .wrapper-cards .card-edit .content .word .example {
   position: relative;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .example .icon_example {
+.container .container-cards .wrapper-cards .card-edit .content .word .example .icon_example {
   font-size: 18px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .idiom-edit {
+.container .container-cards .wrapper-cards .card-edit .content .word .idiom-edit {
   all: initial;
   position: relative;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .idiom-edit span {
+.container .container-cards .wrapper-cards .card-edit .content .word .idiom-edit span {
   font-size: 17px;
   letter-spacing: -0.5px;
   word-spacing: 1px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .word .idiom-edit .icon_idiom {
+.container .container-cards .wrapper-cards .card-edit .content .word .idiom-edit .icon_idiom {
   width: 35px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media {
+.container .container-cards .wrapper-cards .card-edit .content .media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -692,20 +693,20 @@ body {
           flex-direction: column;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media > * {
+.container .container-cards .wrapper-cards .card-edit .content .media > * {
   all: initial;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video {
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-img,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-video {
   position: relative;
   background: rgba(3, 218, 198, 0.5);
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .img,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .video,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .img,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .video {
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .img,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .video,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .img,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .video {
   opacity: 0.6;
   margin-bottom: 10px;
   height: 150px;
@@ -714,8 +715,8 @@ body {
      object-fit: cover;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_edit,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_edit {
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_edit,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_edit {
   opacity: 1;
   z-index: 1;
   top: 50%;
@@ -725,13 +726,13 @@ body {
           transform: translate(-50%, -50%);
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_edit:hover,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_edit:hover {
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_edit:hover,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_edit:hover {
   width: 65px;
 }
 
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_cancel,
-.App .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_cancel {
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-img .icon_cancel,
+.container .container-cards .wrapper-cards .card-edit .content .media .wrapper-video .icon_cancel {
   opacity: 1;
   z-index: 1;
   right: 10px;
@@ -740,7 +741,7 @@ body {
   color: white;
 }
 
-.App .pagination-card {
+.container .pagination-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -757,13 +758,13 @@ body {
           align-items: center;
 }
 
-.App .pagination-card .icon {
+.container .pagination-card .icon {
   margin: 0 8px;
   cursor: pointer;
   font-weight: bold;
 }
 
-.App .pagination-card .--color-init {
+.container .pagination-card .--color-init {
   color: #b4b4b4;
 }
 /*# sourceMappingURL=App.css.map */

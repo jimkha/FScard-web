@@ -11,6 +11,7 @@ import store from "./stores";
 import PrivateRoute from "./middleware/PrivateRoute";
 import Alert from "./components/common/Alert";
 import Login from "./components/auth/Login";
+import Dashboard from "./components/dashboard/Dashboard";
 
 const App = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const App = () => {
         <section className="container">
           <Alert />
           <Switch>
-            {/* <PrivateRoute path="/dashboard" component={} /> */}
+            <PrivateRoute path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
           </Switch>
         </section>

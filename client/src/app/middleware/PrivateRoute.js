@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
+//COMPONENTS
+import Spinner from "../components/common/Spinner";
+
 const PrivateRoute = ({
   component: Component,
   auth: { isAuthenticated, loading },
@@ -18,9 +21,7 @@ const PrivateRoute = ({
           <Redirect to="/login" />
         )
       ) : (
-        //TODO: spinner
-        // <Spinner />
-        ""
+        <Spinner />
       )
     }
   />

@@ -17,13 +17,12 @@ export const loadUser = () => async (dispatch) => {
     if (localStorage.token) {
       // set token into header http
       setAuthToken(localStorage.token);
-      const res = await axios.get("/api/user/auth");
-
-      dispatch({
-        type: USER_LOADED,
-        payload: res.data,
-      });
     }
+    const res = await axios.get("/api/user/auth");
+    dispatch({
+      type: USER_LOADED,
+      payload: res.data,
+    });
   } catch (error) {
     dispatch({
       type: AUTH_ERROR,

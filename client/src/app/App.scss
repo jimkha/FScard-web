@@ -40,7 +40,7 @@ body {
   height: 100%;
   overflow: hidden;
 }
-.App {
+.container {
   display: grid;
   height: 100%;
   grid-template: 13% 1fr / 280px 1fr;
@@ -103,6 +103,7 @@ body {
       #avatar {
         width: 50px;
         margin: 0 80px 0 20px;
+        border-radius: 30px;
       }
     }
   }

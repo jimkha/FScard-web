@@ -22,12 +22,12 @@ controller.login = async (req, res) => {
     const idGG = req.user.idGG;
     const email = req.user.email;
     const name = req.user.name;
-
+    const picture = req.user.picture;
     //Check if user exists
     let user = await User.findOne({ idGG: idGG });
 
     if (!user) {
-      user = new User({ idGG, email, name });
+      user = new User({ idGG, email, name, picture });
       await user.save();
     }
     const payload = {
