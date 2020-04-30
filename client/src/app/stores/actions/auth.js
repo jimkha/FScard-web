@@ -45,11 +45,12 @@ export const login = (data) => async (dispatch) => {
     });
     dispatch(loadUser());
   } catch (error) {
-    const errors = error.response.data.errors;
+    console.log(error);
+    // const errors = error.response.data.errors;
 
-    if (errors) {
-      errors.forEach((err) => dispatch(setAlert(err.msg, "danger")));
-    }
+    // if (errors) {
+    //   errors.forEach((err) => dispatch(setAlert(err.msg, "danger")));
+    // }
 
     dispatch({
       type: LOGIN_FAIL,

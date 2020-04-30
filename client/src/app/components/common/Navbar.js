@@ -15,7 +15,7 @@ const Navbar = ({ user }) => {
           <div className="search-box">
             <input type="text" placeholder="Search your flashcards" />
             <a href="#">
-              <span class="material-icons" id="icon_search">
+              <span className="material-icons" id="icon_search">
                 search
               </span>
             </a>
@@ -23,7 +23,7 @@ const Navbar = ({ user }) => {
         </div>
         <div className="wrapper">
           <img src={icon_extend} id="icon_extend" />
-          <img src={user.picture} id="avatar" alt="avatar" />
+          <img src={!user ? "" : user.picture} id="avatar" alt="avatar" />
         </div>
       </nav>
     </Fragment>
@@ -31,7 +31,7 @@ const Navbar = ({ user }) => {
 };
 
 Navbar.propTypes = {
-  user: PropTypes.object.isRequired,
+  // user: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

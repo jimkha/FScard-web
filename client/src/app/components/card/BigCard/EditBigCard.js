@@ -6,11 +6,13 @@ import icon_edit from "../../../../assets/img/icon_edit.svg";
 import icon_idiom from "../../../../assets/img/icon_idiom.svg";
 import img_cat from "../../../../assets/img/cat.jpg";
 
-const EditBigCard = (props) => {
+const EditBigCard = ({ cancelEdit }) => {
   return (
-    <div className="card card-edit backside  ">
+    <div className="card card-edit backside add-media  ">
       <span class="material-icons icon_accept">check_circle</span>
-      <span class="material-icons icon_cancel">cancel</span>
+      <span class="material-icons icon_cancel" onClick={() => cancelEdit()}>
+        cancel
+      </span>
       <span class="material-icons icon_delete">delete_forever</span>
       <section className="content">
         <section className="media">

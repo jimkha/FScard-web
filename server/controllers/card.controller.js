@@ -8,7 +8,7 @@ const Card = require('../models/Card');
 const controller = {};
 
 //Get all cards by user id
-controller.getAll = async (req, res) => {
+controller.getAllByMode = async (req, res) => {
   try {
     let cards = await Card.find({ user: req.user.id });
     const currentDate = moment().format('MM-DD-YYYY');

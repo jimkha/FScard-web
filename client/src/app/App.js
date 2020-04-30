@@ -20,7 +20,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        {/* <Navbar /> */}
         <section className="container">
           <Alert />
           <Switch>

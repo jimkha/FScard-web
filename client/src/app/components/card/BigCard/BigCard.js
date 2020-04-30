@@ -1,17 +1,31 @@
 import React, { Fragment, useState } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 // ASSETS
 import icon_edit from "../../../../assets/img/icon_edit.svg";
 import icon_idiom from "../../../../assets/img/icon_idiom.svg";
 
-const BigCard = (props) => {
-  const [state, setstate] = useState("facade");
-  //TODO:
-  // function double click
+//REDUX
+import { turnOverCard } from "../../../stores/actions/card";
+
+const BigCard = ({ editBigCard, turnOverCard, card }) => {
+  const { isFacade } = card;
+
+  const bubbling = (e) => {
+    e.stopPropagation();
+  };
   return (
-    <div className={`card ` + state}>
-      <img src={icon_edit} alt="" className="icon_edit" />
+    <div
+      className={`card ${isFacade ? "facade" : "backside"}`}
+      onClick={() => turnOverCard()}
+    >
+      <img
+        src={icon_edit}
+        alt="icon edit"
+        className="icon_edit"
+        onClick={((e) => bubbling(e), () => editBigCard())}
+      />
       <span class="material-icons icon_delete">delete_forever</span>
       <section className="content">
         <section className="word">
@@ -37,4 +51,10 @@ const BigCard = (props) => {
 
 BigCard.propTypes = {};
 
-export default BigCard;
+const mapStateToProps = (state) => ({
+  card: state.card.card,
+});
+const mapDispatchToProps = (dispatch) => ({
+  turnOverCard: () => dispatch(turnOverCard()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(BigCard);
