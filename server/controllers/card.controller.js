@@ -1,5 +1,3 @@
-const { validationResult } = require('express-validator');
-const { ObjectId } = require('mongodb');
 const moment = require('moment');
 
 //MODELS
@@ -7,7 +5,7 @@ const Card = require('../models/Card');
 
 const controller = {};
 
-//Get all cards by user id
+// Get all cards by user id
 controller.getAllByMode = async (req, res) => {
   try {
     let cards = await Card.find({ user: req.user.id });
@@ -29,6 +27,8 @@ controller.getAllByMode = async (req, res) => {
           );
         });
         break;
+      case 'all':
+        break;
     }
     res.json(cards);
   } catch (error) {
@@ -37,4 +37,22 @@ controller.getAllByMode = async (req, res) => {
   }
 };
 
+//CREATE NEW CARD
+controller.createCard = async (req, res) => {
+  try {
+    const newCard = new Card({
+      ...req.body,
+      user: req.user.id,
+    });
+    await newCard.save();
+    res.json(newCard);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+};
+
 module.exports = controller;
+
+//TODO:
+//1. validate input

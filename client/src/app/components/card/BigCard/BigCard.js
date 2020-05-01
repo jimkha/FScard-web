@@ -18,7 +18,12 @@ const BigCard = ({ editBigCard, turnOverCard, card }) => {
   return (
     <div
       className={`card ${isFacade ? "facade" : "backside"}`}
-      onClick={() => turnOverCard()}
+      onClick={(e) => {
+        const regex = /(icon_edit|icon_delete|icon_volumn|hastag)/;
+        if (!e.target.className.match(regex)) {
+          turnOverCard();
+        }
+      }}
     >
       <img
         src={icon_edit}
