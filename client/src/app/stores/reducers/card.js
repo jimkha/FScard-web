@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         card: {
-          ...state.card.card,
+          isFacade: state.card.isFacade,
           ...payload[0],
         },
         cards: payload,
@@ -28,7 +28,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         card: {
-          ...state.card.card,
+          ...state.card,
           isFacade: !state.card.isFacade,
         },
       };

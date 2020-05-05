@@ -316,13 +316,17 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 70%;
 }
 
 .container .container-cards .wrapper-cards .card {
+  margin-top: 30px;
   padding: 50px 0 10px 0;
   -webkit-box-shadow: 0 0 20px #c4c4c4;
           box-shadow: 0 0 20px #c4c4c4;
@@ -741,7 +745,8 @@ body {
   color: white;
 }
 
-.container .pagination-card {
+.container .container-cards .wrapper-cards .pagination-card {
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -758,13 +763,13 @@ body {
           align-items: center;
 }
 
-.container .pagination-card .icon {
+.container .container-cards .wrapper-cards .pagination-card .icon {
   margin: 0 8px;
   cursor: pointer;
   font-weight: bold;
 }
 
-.container .pagination-card .--color-init {
+.container .container-cards .wrapper-cards .pagination-card .--color-init {
   color: #b4b4b4;
 }
 /*# sourceMappingURL=App.css.map */

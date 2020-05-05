@@ -3,10 +3,9 @@ import axios from "axios";
 import { TURN_OVER, CARD_LOADED, CARD_ERROR } from "../actions/types";
 
 //LOAD CARDS
-export const loadCards = () => async (dispatch) => {
+export const loadCards = (dayMode) => async (dispatch) => {
   try {
-    const res = axios.get("/api/cards");
-    console.log(res);
+    const res = await axios.get("/api/cards/" + dayMode);
     dispatch({
       type: CARD_LOADED,
       payload: res.data,

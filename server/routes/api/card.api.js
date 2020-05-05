@@ -17,4 +17,22 @@ router.get('/:mode', auth.authToken, controller.getAllByMode);
 // @access  Private
 router.post('/', auth.authToken, controller.createCard);
 
+// @route   PUT api/cards/:id
+// @desc    Update card
+// @access  Private
+router.put(
+  '/:id',
+  [auth.authToken, card.checkCardOwner],
+  controller.updateCard,
+);
+
+// @route   DELETE api/cards/:id
+// @desc    Delete card
+// @access  Private
+router.delete(
+  '/:id',
+  [auth.authToken, card.checkCardOwner],
+  controller.deleteCard,
+);
+
 module.exports = router;

@@ -12,9 +12,6 @@ import { turnOverCard } from "../../../stores/actions/card";
 const BigCard = ({ editBigCard, turnOverCard, card }) => {
   const { isFacade } = card;
 
-  const bubbling = (e) => {
-    e.stopPropagation();
-  };
   return (
     <div
       className={`card ${isFacade ? "facade" : "backside"}`}
@@ -29,7 +26,7 @@ const BigCard = ({ editBigCard, turnOverCard, card }) => {
         src={icon_edit}
         alt="icon edit"
         className="icon_edit"
-        onClick={((e) => bubbling(e), () => editBigCard())}
+        onClick={() => editBigCard()}
       />
       <span class="material-icons icon_delete">delete_forever</span>
       <section className="content">

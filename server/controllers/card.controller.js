@@ -52,6 +52,31 @@ controller.createCard = async (req, res) => {
   }
 };
 
+//UPDATE
+controller.updateCard = async (req, res) => {
+  try {
+    const updatedCard = await Card.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: req.body },
+      { new: true },
+    );
+    res.json(updatedCard);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+};
+
+//DELETE
+controller.deleteCard = async (req, res) => {
+  try {
+    await Card.findByIdAndDelete(req.params.id);
+    res.json('Done');
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+};
 module.exports = controller;
 
 //TODO:

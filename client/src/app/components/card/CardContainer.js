@@ -8,27 +8,39 @@ import icon_list from "../../../assets/img/icon_list.svg";
 import BigCardCon from "./BigCard/BigCardCon";
 
 const CardContainer = (props) => {
-  const [mode, setMode] = useState("bigcard");
+  const [shapeMode, setShapeMode] = useState("bigCard");
+  const [dayMode, setDayShow] = useState("today");
+  const changeDayMode = (e) => {
+    setDayShow(e.target.value);
+  };
   return (
     <Fragment>
       <figure className="container-cards">
         <header className="toolbar">
-          <select name="" class="time-show-options">
-            <option value="Today" selected>
-              Today
-            </option>
-            <option value="Week">Week</option>
-          </select>
+          {shapeMode === "bigCard" ? (
+            <select
+              name=""
+              class="time-show-options"
+              value="today"
+              onChange={(e) => changeDayMode(e)}
+            >
+              <option value="today">Today</option>
+              <option value="week">Week</option>
+              <option value="all">All</option>
+            </select>
+          ) : (
+            ""
+          )}
           <img src={icon_list} className="btn mode-card"></img>
         </header>
+
         <main className="wrapper-cards">
-          {mode === "bigcard" ? <BigCardCon /> : ""}
+          {shapeMode === "bigCard" ? (
+            <BigCardCon dayMode={dayMode} />
+          ) : (
+            "listCard"
+          )}
         </main>
-        <div className="pagination-card">
-          <span class="material-icons icon  --color-init">arrow_back</span>
-          <p className="number-card">1/20</p>
-          <span class="material-icons icon ">arrow_forward</span>
-        </div>
       </figure>
     </Fragment>
   );
