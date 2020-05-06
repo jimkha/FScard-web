@@ -1,29 +1,14 @@
-# Book schedule app
+# DOC
 
-Web is used to book a studying schedule that is similar to GOOGLE calendar.
+- API: tìm trong `/routes/api` 
+    + `// @route GET api/cards` nghĩa là gửi request get đếnlocalhost:5000/api/cards.
+    + `// @desc Get all cards by mode`: miêu tả dùng làm gì?.
+    + `// @access Private`: tự hiểu.
+- Middleware: Xác thực user theo kiểu `jwtoken` tìm trong `/routes/middleware`
+- Dùng Login API GOOGLE:  tokenGG -> server -> tạo ra pirate token của mình với mật mã jwtSecret trong `.env` -> client -> save trong local
 
-You can play with it here: [Demo](https://book-schedule-app.herokuapp.com/)
+# SET UP
 
-- Tech stack: MERN
-- API: [ej2](https://ej2.syncfusion.com/react/documentation/api/schedule/)
-
-## Feature:
-
-1.Login,register,logout
-
-2.Add, delete, update a booking
-
-\*Rule for booking:
-
-- Duration > 15p
-- No overlap
-- Only set booking in a specified week (X)
-- Table capacity <= 50 booking (X)
-
-## Deploy:
-
-1. Run `npm run setup`
-2. Rename `.env.example` to `.env` and add environment-specifici variable
-3. Run `npm run dev`
-
-\*Note: if you meet a error about babel, you should delete babel-eslint and install babel-eslint@10.0.3
+- change .env.exmaple to .env
+- npm install
+- npm run server
