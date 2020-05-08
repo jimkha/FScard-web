@@ -10,8 +10,13 @@ import icon_idiom from "../../../../assets/img/icon_idiom.svg";
 import { turnOverCard } from "../../../stores/actions/card";
 
 const BigCard = ({ editBigCard, turnOverCard, card }) => {
-  const { isFacade } = card;
-
+  const { isFacade, facade, backside } = card;
+  let cardData = facade;
+  if (!isFacade) {
+    cardData = backside;
+  }
+  const isMedia = "gif" && "img" in cardData ? true : false;
+  console.log(cardData, isMedia);
   return (
     <div
       className={`card ${isFacade ? "facade" : "backside"}`}

@@ -19,7 +19,10 @@ const EditBigCard = ({ cancelEdit }) => {
           <div className="wrapper-img">
             <img class="icon_edit" src={icon_edit} />
             <span class="material-icons icon_cancel">close</span>
-            <img src={img_cat} className="img" />
+            <img
+              src="https://res.cloudinary.com/dzaamx0kb/image/upload/v1588836570/flashcard/cat_qop9xv.jpg"
+              className="img"
+            />
           </div>
           <div className="wrapper-video">
             <video

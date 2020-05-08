@@ -7,12 +7,11 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-app.use(cors());
 // Connect DB
 connectDB();
-
 app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('API running'));
+app.use(cors());
 
 // Define Routes
 app.use('/api/user', require('./routes/api/user.api'));
@@ -30,3 +29,6 @@ app.use('/api/cards', require('./routes/api/card.api'));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+//ASK:
+//1.Why use jstoken

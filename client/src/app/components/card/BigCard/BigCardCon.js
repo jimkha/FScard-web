@@ -8,7 +8,7 @@ import EditBigCard from "./EditBigCard";
 //REDUX
 import { loadCards } from "../../../stores/actions/card";
 
-const BigCardCon = ({ loadCards, dayMode }) => {
+const BigCardCon = ({ cards, loadCards, dayMode }) => {
   useEffect(() => {
     loadCards(dayMode);
   }, [loadCards, dayMode]);
@@ -20,27 +20,30 @@ const BigCardCon = ({ loadCards, dayMode }) => {
   const cancelEdit = () => {
     setstate(false);
   };
-  //TODO:
-  return (
+
+  return cards.length > 0 ? (
     <Fragment>
       {!isEditing ? (
         <BigCard editBigCard={() => editBigCard()} />
       ) : (
         <EditBigCard cancelEdit={() => cancelEdit()} />
       )}
-      {/* TODO: render card infor and number card on pagination */}
       <div className="pagination-card">
         <span class="material-icons icon  --color-init">arrow_back</span>
-        <p className="number-card">1/20</p>
+        <p className="number-card">1/{cards.length}</p>
         <span class="material-icons icon ">arrow_forward</span>
       </div>
     </Fragment>
+  ) : (
+    " Not any cards here !!!"
   );
 };
 
 BigCardCon.propTypes = {};
-
+const mapStateToProps = (state) => ({
+  cards: state.card.cards,
+});
 const mapDispatchToProps = (dispatch) => ({
   loadCards: (dayMode) => dispatch(loadCards(dayMode)),
 });
-export default connect(null, mapDispatchToProps)(BigCardCon);
+export default connect(mapStateToProps, mapDispatchToProps)(BigCardCon);

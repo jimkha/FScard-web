@@ -19,6 +19,9 @@ const cardSchema = new mongoose.Schema({
         name: { type: String, ref: 'Collection' },
       },
     ],
+    example: {
+      type: String,
+    },
     audio: {
       type: String,
     },
@@ -37,6 +40,11 @@ const cardSchema = new mongoose.Schema({
         },
       ],
     },
+    relatedWord: [
+      {
+        name: { type: String },
+      },
+    ],
     another: [
       {
         name: { type: String },

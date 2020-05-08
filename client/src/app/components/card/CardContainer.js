@@ -21,7 +21,7 @@ const CardContainer = (props) => {
             <select
               name=""
               class="time-show-options"
-              value="today"
+              value={dayMode}
               onChange={(e) => changeDayMode(e)}
             >
               <option value="today">Today</option>

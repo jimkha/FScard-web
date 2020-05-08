@@ -17,7 +17,7 @@ export default function (state = initialState, action) {
         ...state,
         card: {
           isFacade: state.card.isFacade,
-          ...payload[0],
+          ...payload[payload.length - 1],
         },
         cards: payload,
         loading: false,
